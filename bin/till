@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+
+require 'clio/usage'
+require 'till/tiller'
+
+use = Clio::Usage.new
+use['--delete -d', 'delete templates when finished']
+use['--force  -f', 'automatically make overwrites']
+use['--skip   -s', 'automatically skip overwrites']
+use['--dryrun -r', 'demonstrate files that would be tilled']
+use['--help   -h', 'display this help information']
+use['<DIR>',       'directory to till; default is working directory']
+
+cli  = use.parse(ARGV)
+dir  = cli.arguments[0]
+opts = cli.options
+
+if cli.help?
+  puts use.help.to_s(:bold=>true)
+  exit
+end
+
+tiller = Till::Tiller.new(dir, opts)
+tiller.till
+

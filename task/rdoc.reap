@@ -1,0 +1,7 @@
+---
+rdoc:
+  service  : RDoc
+  template : ~
+  inline   : true
+  extra    : '-d -x lib/reap.sow'
+
