@@ -1,27 +1,40 @@
 = Till
 
-* http://.rubyforge.org
+* http://proutils.github.com/till
+* http://github.com/proutils/till
 
 
 == DESCRIPTION
 
-Till is a simple project-oriented erb-based template system
-using POM for metadata.
+Till is a simple project-oriented eRuby-based template system
+using POM metadata.
 
 
 == FEATURES/ISSUES
 
-* List features and issues... __FIX__
-
-
-== RELEASE NOTES
-
-Please see RELEASE file.
+* Easy to use.
+* Used eRuby. Easy.
+* Uses POM metadata. Easy.
+* Templates go where the file goes. Easy.
+* Did I mention it was easy?
 
 
 == SYNOPSIS
 
-Describe how to use your library or application here...__FIX__
+Create an template file, such as README.till.
+
+In a Ruby script add a till comment.
+
+  module YourLibrary
+    VERSION = "1.0.0" #:till: VERSION="<%= version %>"
+  end
+
+Then run:
+
+  $ till
+
+All .till files and all #:till: inline templates will
+be filled in.
 
 
 == HOW TO INSTALL
@@ -36,17 +49,25 @@ Local installation requires Setup.rb (gem install setup),
 then download the tarball package and type:
 
   tar -xvzf till-1.0.0.tgz
-  cd till-\1.0.0.tgz
+  cd till-1.0.0.tgz
   sudo setup.rb all
 
 Windows users use 'ruby setup.rb all'.
 
 
-== LICENSE
+== LIMITATIONS
 
-Copyright (c) 2009 Trans <transfire@gmail.com>
+* Multiline inline ruby templating is not yet supported.
+Would love to implement but need idea on how best to do it.
+* POM library is not used for accessing meta/ files. This
+should change once POM properly supports arbitrary metadata.
 
-This program is ditributed unser the terms of the GPL license.
+
+== COPYRIGHT & LICENSE
+
+Copyright (c) 2009 Thomas Sawyer
+
+This program is ditributed unser the terms of the GPL v3 license.
 
 See LICENSE file for details.
 
