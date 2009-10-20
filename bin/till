@@ -1,25 +1,49 @@
 #!/usr/bin/env ruby
 
-require 'clio/usage'
+require 'optparse'
 require 'till/tiller'
 
-use = Clio::Usage.new
-use['--delete -d', 'delete templates when finished']
-use['--force  -f', 'automatically make overwrites']
-use['--skip   -s', 'automatically skip overwrites']
-use['--dryrun -r', 'demonstrate files that would be tilled']
-use['--help   -h', 'display this help information']
-use['<DIR>',       'directory to till; default is working directory']
+options = {}
 
-cli  = use.parse(ARGV)
-dir  = cli.arguments[0]
-opts = cli.options
+usage = OptionParser.new do |use|
 
-if cli.help?
-  puts use.help.to_s(:bold=>true)
-  exit
+  use.banner = 'Usage: till [OPTIONS] [<DIR>]'
+
+  use.on('-d', '--delete', 'delete templates when finished') do
+    options[:delete] = true
+  end
+
+  use.on('-f', '--force', 'automatically make overwrites') do
+    options[:force] = true
+  end
+
+  use.on('-s', '--skip', 'automatically skip overwrites') do
+    options[:skip] = true
+  end
+
+  use.on('-n', '--noharm', 'demonstrate files that would be tilled') do
+    options[:noop] = true
+  end
+
+  use.on_tail('-h', '--help', 'display this help information') do
+    puts use
+    exit
+  end
+
 end
 
-tiller = Till::Tiller.new(dir, opts)
+#use['<DIR>',       'directory to till; default is working directory']
+
+usage.parse!(ARGV)
+
+dir = ARGV.pop
+
+#if cli.help?
+#  puts use.help.to_s(:bold=>true)
+#  exit
+#end
+
+tiller = Till::Tiller.new(dir, options)
+
 tiller.till
 

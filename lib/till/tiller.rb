@@ -13,19 +13,25 @@ module Till
     attr_accessor :delete
     attr_accessor :force
     attr_accessor :skip
-    attr_accessor :dryrun
+    attr_accessor :noop
+    attr_accessor :debug
 
+    #
     def initialize(output, options)
       @output = output || Dir.pwd
       @delete = options[:delete]
       @force  = options[:force]
       @skip   = options[:skip]
-      @dryrun = options[:dryrun]
+      @noop   = options[:noop]
     end
 
     def delete? ; @delete ; end
     def force?  ; @force  ; end
     def skip?   ; @skip   ; end
+    def debug?  ; @debug  ; end
+    def noop?   ; @noop   ; end
+
+    def dryrun? ; @noop   ; end
 
     #
     def tillfiles
@@ -50,7 +56,7 @@ module Till
         fname = file.chomp('.till')
         name  = fname.sub(Dir.pwd+'/', '')
         #print "  #{name}"
-        if dryrun
+        if noop?
           puts "  #{name}"
         else
           if File.exist?(fname)
@@ -86,7 +92,7 @@ module Till
           end
         end
         if save
-          if dryrun
+          if noop?
             puts "  #{name}"
           else
             File.open(file, 'w'){ |f| f << text }
