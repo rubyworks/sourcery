@@ -1,0 +1,193 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<HTML>
+<HEAD>
+  <TITLE>Till</TITLE>
+
+  <LINK rel="shortcut icon" href="assets/images/ruby.png"/>
+
+  <LINK type="text/css" rel="stylesheet" href="assets/styles/reset.css" />
+  <LINK type="text/css" rel="stylesheet" href="assets/styles/struct.css" />
+  <LINK type="text/css" rel="stylesheet" href="assets/styles/font.css" />
+  <LINK type="text/css" rel="stylesheet" href="assets/styles/color.css" />
+
+  <SCRIPT language="javascript" type="text/javascript" src="assets/scripts/jquery.js"></SCRIPT>
+  <SCRIPT language="javascript" type="text/javascript" src="assets/scripts/highlight.js"></SCRIPT>
+
+  <SCRIPT type="text/javascript">
+    $(document).ready(function() {
+      $('pre').wrapInner('<code></code>');
+      hljs.tabReplace = '    ';
+      hljs.initHighlightingOnLoad('ruby');
+    });
+  </SCRIPT>
+
+  <LINK type="text/css" rel="stylesheet" href="assets/styles/highlight.css" />
+</HEAD>
+<BODY>
+
+<div id="header">
+  <div class="title"> 
+    
+      <div class="logo">
+        <a href="http://proutils.rubyforge.org/svn/till"><img src="assets/images/logo.jpg" /></a>
+      </div>    
+    
+    <h1>Till</h1>
+<ul>
+<li>home: <a href="http://proutils.github.com/till">http://proutils.github.com/till</a>
+
+</li>
+<li>rdocs: <a href="http://proutils.github.com/till/rdoc">http://proutils.github.com/till/rdoc</a>
+
+</li>
+<li>source: <a href="http://github.com/proutils/till">http://github.com/proutils/till</a>
+
+</li>
+<li>forum: <a href="http://googlegroups.com/group/proutils">http://googlegroups.com/group/proutils</a>
+
+</li>
+</ul>
+
+  </div>
+</div>
+
+<div id="nav">
+  <div class="menu">
+    <ul>
+    
+      <li><a href="#section_description">DESCRIPTION</a></li>
+    
+      <li><a href="#section_features">FEATURES</a></li>
+    
+      <li><a href="#section_synopsis">SYNOPSIS</a></li>
+    
+      <li><a href="#section_how_to_install">HOW TO INSTALL</a></li>
+    
+      <li><a href="#section_limitations">LIMITATIONS</a></li>
+    
+      <li><a href="#section_copyright_&amp;_license">COPYRIGHT &amp; LICENSE</a></li>
+    
+    </ul>
+  </div>
+</div>
+
+<div id="main">
+  <div class="doc">
+    <div class="section" id="section_description"><h2>DESCRIPTION</h2>
+<p>
+Till is a simple project-oriented eRuby-based template system using POM
+metadata.
+</p>
+</div><div class="section" id="section_features"><h2>FEATURES</h2>
+<ul>
+<li>Easy to use.
+
+</li>
+<li>Used eRuby. Easy.
+
+</li>
+<li>Uses POM metadata. Easy.
+
+</li>
+<li>Templates go where the file goes. Easy.
+
+</li>
+<li>Did I mention it was easy?
+
+</li>
+</ul>
+</div><div class="section" id="section_synopsis"><h2>SYNOPSIS</h2>
+<p>
+Create an template file, such as README.till.
+</p>
+<p>
+In a Ruby script add a till comment.
+</p>
+<pre>
+  module YourLibrary
+    VERSION = &quot;1.0.0&quot; #:till: VERSION=&quot;&lt;%= version %&gt;&quot;
+  end
+</pre>
+<p>
+Then run:
+</p>
+<pre>
+  $ till
+</pre>
+<p>
+All .till files and all #:till: inline templates will be filled in.
+</p>
+</div><div class="section" id="section_how_to_install"><h2>HOW TO INSTALL</h2>
+<p>
+Describe your installation procedure here.
+</p>
+<p>
+To install with RubyGems simply open a console and type:
+</p>
+<pre>
+  $ gem install till
+</pre>
+<p>
+Local installation requires Setup.rb (gem install setup), then download the
+tarball package and type:
+</p>
+<pre>
+  $ tar -xvzf till-1.0.0.tgz
+  $ cd till-1.0.0.tgz
+  $ sudo setup.rb all
+</pre>
+<p>
+Windows users use &#8216;ruby setup.rb all&#8217;.
+</p>
+</div><div class="section" id="section_limitations"><h2>LIMITATIONS</h2>
+<p>
+Multiline inline ruby templating is not yet supported. Would love to
+implement but need idea on how best to do it.
+</p>
+<p>
+Also, currently the POM library is not used for accessing meta/ files. This
+will change once POM properly supports arbitrary metadata.
+</p>
+</div><div class="section" id="section_copyright_&amp;_license"><h2>COPYRIGHT &amp; LICENSE</h2>
+<p>
+Copyright &#169; 2009 Thomas Sawyer
+</p>
+<p>
+This program is ditributed unser the terms of the GPL v3 license.
+</p>
+<p>
+See LICENSE file for details.
+</p>
+</div>
+  </div>
+</div>
+
+<div id="footer">
+<div class="advert">
+<div style="text-align: center;">
+  <script type="text/javascript"><!--
+  google_ad_client = "pub-1126154564663472";
+  /* RUBYWORKS 09-10-02 728x90 */
+  google_ad_slot = "0788888658";
+  google_ad_width = 728;
+  google_ad_height = 90;
+  //-->
+  </script>
+  <script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+  </script>
+</div>
+
+</div>
+  <div class="copyright">
+    Till Copyright &copy; 2009 <br/>
+  </div>
+</div>
+
+</BODY>
+</HTML>
+
+<!-- ReadWe Copyright (c) 2009 Thomas Sawyer -->
+

@@ -1,0 +1,31 @@
+--- !ruby/object:RDoc::RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Metadata belongs to the project being scaffold.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "TODO: Support POM::Metadata"
+- !ruby/struct:RDoc::Markup::Flow::RULE 
+  width: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Metadata belongs to the project being scaffold.
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "TODO: Support POM::Metadata"
+constants: []
+
+full_name: Till::Metadata
+includes: []
+
+instance_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: load_metadata
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: metadir
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: method_missing
+name: Metadata
+superclass: Object

@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: What is the output's metadirectory?
+full_name: Till::Metadata#metadir
+is_singleton: false
+name: metadir
+params: ()
+visibility: private
