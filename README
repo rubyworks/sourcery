@@ -1,7 +1,9 @@
 = Till
 
-* http://proutils.github.com/till
-* http://github.com/proutils/till
+* home: http://proutils.github.com/till
+* rdocs: http://proutils.github.com/till/rdoc
+* source: http://github.com/proutils/till
+* forum: http://googlegroups.com/group/proutils
 
 
 == DESCRIPTION
@@ -10,7 +12,7 @@ Till is a simple project-oriented eRuby-based template system
 using POM metadata.
 
 
-== FEATURES/ISSUES
+== FEATURES
 
 * Easy to use.
 * Used eRuby. Easy.
@@ -43,14 +45,14 @@ Describe your installation procedure here.
 
 To install with RubyGems simply open a console and type:
 
-  gem install till
+  $ gem install till
 
 Local installation requires Setup.rb (gem install setup),
 then download the tarball package and type:
 
-  tar -xvzf till-1.0.0.tgz
-  cd till-1.0.0.tgz
-  sudo setup.rb all
+  $ tar -xvzf till-1.0.0.tgz
+  $ cd till-1.0.0.tgz
+  $ sudo setup.rb all
 
 Windows users use 'ruby setup.rb all'.
 
