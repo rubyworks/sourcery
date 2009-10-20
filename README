@@ -59,10 +59,11 @@ Windows users use 'ruby setup.rb all'.
 
 == LIMITATIONS
 
-* Multiline inline ruby templating is not yet supported.
+Multiline inline ruby templating is not yet supported.
 Would love to implement but need idea on how best to do it.
-* POM library is not used for accessing meta/ files. This
-should change once POM properly supports arbitrary metadata.
+
+Also, currently the POM library is not used for accessing meta/
+files. This will change once POM properly supports arbitrary metadata.
 
 
 == COPYRIGHT & LICENSE
