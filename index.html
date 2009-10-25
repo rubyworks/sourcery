@@ -5,12 +5,10 @@
 <HEAD>
   <TITLE>Till</TITLE>
 
-  <LINK rel="shortcut icon" href="assets/images/ruby.png"/>
+  <LINK rel="shortcut icon" href="assets/images/icon.jpg"/>
 
   <LINK type="text/css" rel="stylesheet" href="assets/styles/reset.css" />
-  <LINK type="text/css" rel="stylesheet" href="assets/styles/struct.css" />
-  <LINK type="text/css" rel="stylesheet" href="assets/styles/font.css" />
-  <LINK type="text/css" rel="stylesheet" href="assets/styles/color.css" />
+  <LINK type="text/css" rel="stylesheet" href="assets/styles/site.css" />
 
   <SCRIPT language="javascript" type="text/javascript" src="assets/scripts/jquery.js"></SCRIPT>
   <SCRIPT language="javascript" type="text/javascript" src="assets/scripts/highlight.js"></SCRIPT>
@@ -27,60 +25,48 @@
 </HEAD>
 <BODY>
 
-<div id="header">
-  <div class="title"> 
-    
-      <div class="logo">
-        <a href="http://proutils.rubyforge.org/svn/till"><img src="assets/images/logo.jpg" /></a>
-      </div>    
-    
-    <h1>Till</h1>
-<ul>
-<li>home: <a href="http://proutils.github.com/till">http://proutils.github.com/till</a>
-
-</li>
-<li>rdocs: <a href="http://proutils.github.com/till/rdoc">http://proutils.github.com/till/rdoc</a>
-
-</li>
-<li>source: <a href="http://github.com/proutils/till">http://github.com/proutils/till</a>
-
-</li>
-<li>forum: <a href="http://googlegroups.com/group/proutils">http://googlegroups.com/group/proutils</a>
-
-</li>
-</ul>
-
+<div id="nav" class="hued">
+  <div class="page">
+    <a href="http://proutils.github.com/till">Home</a> &nbsp;
+    <a href="http://proutils.github.com/till/rdoc">API Documents</a> &nbsp;
+    <a href="http://github.com/proutils/till">Development</a> &nbsp;
+    <a href="http://googlegroups.com/group/proutils">Mailing List</a>
   </div>
 </div>
 
-<div id="nav">
+
+<div id="header">
+  <div class="page"> 
+    <a href=""><img src="assets/images/radio_earth.jpg" align="right" style="margin-right: 20px;"/></a>
+    <h1>Till</h1>
+  </div>
+</div>
+
+<div id="aside">
   <div class="menu">
     <ul>
-    
+      <li><a href="#">TILL</a></li>
       <li><a href="#section_description">DESCRIPTION</a></li>
-    
       <li><a href="#section_features">FEATURES</a></li>
-    
       <li><a href="#section_synopsis">SYNOPSIS</a></li>
-    
       <li><a href="#section_how_to_install">HOW TO INSTALL</a></li>
-    
       <li><a href="#section_limitations">LIMITATIONS</a></li>
-    
       <li><a href="#section_copyright_&amp;_license">COPYRIGHT &amp; LICENSE</a></li>
-    
     </ul>
   </div>
 </div>
 
-<div id="main">
-  <div class="doc">
-    <div class="section" id="section_description"><h2>DESCRIPTION</h2>
+<div id="main" class="hued">
+<div class="page">
+
+<div class="section" id="section_description"><h2>DESCRIPTION</h2>
 <p>
 Till is a simple project-oriented eRuby-based template system using POM
 metadata.
 </p>
-</div><div class="section" id="section_features"><h2>FEATURES</h2>
+</div>
+
+<div class="section" id="section_features"><h2>FEATURES</h2>
 <ul>
 <li>Easy to use.
 
@@ -134,8 +120,8 @@ Local installation requires Setup.rb (gem install setup), then download the
 tarball package and type:
 </p>
 <pre>
-  $ tar -xvzf till-1.0.0.tgz
-  $ cd till-1.0.0.tgz
+  $ tar -xvzf till-1.0.0.tar.gz
+  $ cd till-1.0.0.tar.gz
   $ sudo setup.rb all
 </pre>
 <p>
@@ -169,8 +155,8 @@ See LICENSE file for details.
 <div style="text-align: center;">
   <script type="text/javascript"><!--
   google_ad_client = "pub-1126154564663472";
-  /* RUBYWORKS 09-10-02 728x90 */
-  google_ad_slot = "0788888658";
+  /* PROUTILS 09-10-14 728x90 */
+  google_ad_slot = "0711173189";
   google_ad_width = 728;
   google_ad_height = 90;
   //-->
@@ -182,7 +168,7 @@ See LICENSE file for details.
 
 </div>
   <div class="copyright">
-    Till Copyright &copy; 2009 <br/>
+    Till Copyright &copy; 2009 Thomas Sawyer <br/>
   </div>
 </div>
 
