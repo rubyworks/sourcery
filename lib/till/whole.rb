@@ -199,7 +199,15 @@ module Till
 
     def save
       render unless result
-      File.open(output, 'w'){ |f| f << result }
+      if File.exist?(output)
+        mode = File.stat(output).mode
+        File.chmod(mode | 0000220, output)
+        File.open(output, 'w'){ |f| f << result }
+        File.chmod(mode, output)
+      else
+        File.open(output, 'w'){ |f| f << result }
+        File.chmod(0440, output)  # change to read-only mode
+      end
     end
 
   end
