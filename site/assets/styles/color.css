@@ -1,7 +1,7 @@
 /* COLOR */
 
 body { color: ##EEEEEE; background: #ffffff; }
-h1 { }
+h1, h2, h3, h4 { color: #007700; }
 a { color: #007700; }
 pre { color: white; }
 
@@ -36,7 +36,7 @@ pre { color: white; }
 .doc a:hover { }
 .doc p { color: ##EEEEEE; }
 .doc h2 { color: #007700; border-color: #80F780; }
-.doc h3 { border-color: #80F780; }
+.doc h3 { color: #007700; border-color: #80F780; }
 
 /* #footer .copyright */
 
