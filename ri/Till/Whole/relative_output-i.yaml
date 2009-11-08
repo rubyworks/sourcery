@@ -1,0 +1,11 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: []
+
+full_name: Till::Whole#relative_output
+is_singleton: false
+name: relative_output
+params: (dir=nil)
+visibility: public

@@ -1,0 +1,16 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: def rubyfiles
+- !ruby/struct:RDoc::Markup::Flow::VERB 
+  body: "  @rubyfiles ||= Dir[File.join(@output, '*<b>/</b>.rb')].select{ |f| File.file?(f) }\n"
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: end
+full_name: Till::Runner#till
+is_singleton: false
+name: till
+params: ()
+visibility: public

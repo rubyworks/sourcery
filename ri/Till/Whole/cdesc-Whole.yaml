@@ -1,0 +1,84 @@
+--- !ruby/object:RDoc::RI::ClassDescription 
+attributes: 
+- !ruby/object:RDoc::RI::Attribute 
+  comment: 
+  - !ruby/struct:RDoc::Markup::Flow::P 
+    body: Context/scope of template rendering.
+  name: context
+  rw: R
+- !ruby/object:RDoc::RI::Attribute 
+  comment: 
+  - !ruby/struct:RDoc::Markup::Flow::P 
+    body: Template fle to render.
+  name: file
+  rw: R
+- !ruby/object:RDoc::RI::Attribute 
+  comment: 
+  - !ruby/struct:RDoc::Markup::Flow::P 
+    body: List of redering filters to processes file through (defaults to <tt>extension</tt> plus <tt>erb</tt>).
+  name: filters
+  rw: R
+- !ruby/object:RDoc::RI::Attribute 
+  comment: 
+  - !ruby/struct:RDoc::Markup::Flow::P 
+    body: Format of the template in terms of extname.
+  name: format
+  rw: R
+- !ruby/object:RDoc::RI::Attribute 
+  comment: 
+  - !ruby/struct:RDoc::Markup::Flow::P 
+    body: Dirname of the template <tt>file</tt>.
+  name: location
+  rw: R
+- !ruby/object:RDoc::RI::Attribute 
+  comment: 
+  - !ruby/struct:RDoc::Markup::Flow::P 
+    body: Where to output rendered result (defaults to <tt>file</tt> w/o <tt>extension</tt>).
+  name: output
+  rw: R
+- !ruby/object:RDoc::RI::Attribute 
+  comment: 
+  - !ruby/struct:RDoc::Markup::Flow::P 
+    body: "Stores the rendered result, after #render is called."
+  name: result
+  rw: R
+class_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::H 
+  level: 1
+  text: Whole Templating
+- !ruby/struct:RDoc::Markup::Flow::RULE 
+  width: 
+- !ruby/struct:RDoc::Markup::Flow::H 
+  level: 1
+  text: Whole Templating
+constants: []
+
+full_name: Till::Whole
+includes: []
+
+instance_methods: 
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: changed?
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: exist?
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: filters=
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: format=
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: output=
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: relative_output
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: render
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: render_tilt
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: root
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: save
+name: Whole
+superclass: Object

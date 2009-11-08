@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Provide metadata to hash. Some (stencil) template systems need the data in hash form.
+full_name: Till::Metadata#to_h
+is_singleton: false
+name: to_h
+params: ()
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Search through Ruby files for inline till templates.
+full_name: Till::Runner#till_inline_template
+is_singleton: false
+name: till_inline_template
+params: (file)
+visibility: public

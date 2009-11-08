@@ -3,6 +3,8 @@ aliases: []
 
 block_params: 
 comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Load metadata. This serves as the fallback if POM is not used.
 full_name: Till::Metadata#load_metadata
 is_singleton: false
 name: load_metadata

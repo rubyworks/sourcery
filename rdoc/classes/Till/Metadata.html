@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+  <title>Class: Till::Metadata</title>
+
+  
+    <link rel="SHORTCUT ICON" href="../../assets/icon/class.png">
+  
+
+  <link type="text/css" rel="stylesheet" href="../../assets/rdoc.css" media="screen" />
+  <link type="text/css" rel="stylesheet" href="../../assets/highlight/styles/github.css" title="GitHub" />
+
+  <script type="text/javascript" charset="utf-8" src="../../assets/jquery.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../../assets/highlight/highlight.pack.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../../assets/quicksearch.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../../assets/main.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready( function() {
+      hookHighlightSyntax();
+	    hookSourceViews();
+	    hookDebuggingToggle();
+	    hookQuickSearch();
+	    highlightLocationTarget();
+
+	    $('ul.link-list a').bind("click", highlightClickTarget);
+    });
+  </script>
+</head>
+<body class="class">
+<div id="main">
+
+  <div class="head">
+    <h1>
+      
+        <img src="../../assets/icon/class.png" align="absmiddle">&nbsp;
+      
+      <a href="../../index.html">Till</a>&nbsp;
+      <a href="/">Till::Metadata</a>
+    </h1>
+  </div>
+
+  <div id="metadata">
+    <div id="project-metadata">
+
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li class="file"><a href="../../files/lib/till/metadata_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/till/metadata.rb">lib/till/metadata.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      <!-- What about Git info, or Hg info? This seems almost silly, albeit kind of cool. -->
+      <!-- TODO: generalize this for all SCMs -->
+
+      
+    </div>
+
+    <div id="class-metadata">
+
+      <!-- Parent Class -->
+      
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        <ul>
+          
+          <li class="class">Object</li>
+          
+        </ul>
+      </div>
+      
+
+      <!-- Namespace Contents -->
+      
+
+      <!-- Method Quickref -->
+      
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+            
+            <li class="singleton">
+              <a href="#M000031">::locate_root_at</a>
+            </li>
+          
+            
+            <li class="singleton">
+              <a href="#M000023">::new</a>
+            </li>
+          
+            
+            <li class="singleton">
+              <a href="#M000030">::root</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000028">#load_metadata</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000029">#metadir</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000026">#method_missing</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000027">#to_h</a>
+            </li>
+          
+        </ul>
+      </div>
+      
+
+      <!-- Included Modules -->
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Information</h3>
+        <ul>
+        
+          <li class="file"><a href="../../files/HISTORY.html">HISTORY</a></li>
+        
+          <li class="file"><a href="../../files/LICENSE.html">LICENSE</a></li>
+        
+          <li class="file"><a href="../../files/README.html">README</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class Index
+          <span class="search-toggle"><img src="../../assets/icon/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <!-- classpage.html : classes -->
+        <ul class="link-list">
+        
+          <li class="module"><a href="../../classes/Till.html">Till</a></li>
+        
+          <li class="class"><a href="../../classes/Till/Context.html">Till::Context</a></li>
+        
+          <li class="class"><a href="../../classes/Till/Inline.html">Till::Inline</a></li>
+        
+          <li class="class"><a href="../../classes/Till/Metadata.html">Till::Metadata</a></li>
+        
+          <li class="class"><a href="../../classes/Till/Runner.html">Till::Runner</a></li>
+        
+          <li class="class"><a href="../../classes/Till/Whole.html">Till::Whole</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+    </div>
+
+    <div id="validator-badges">
+      
+      <div style="float: right; margin-right: 5px;">
+        <a href="http://validator.w3.org/check/referer"><img src="../../assets/icon/check.png" alt="[Validate]" height="16" width="16" /></a>
+      </div>
+      Generated with <a href="http://github.com/proutils/webri">WebRI Redfish</a> 1.0.0
+      <br/><br/>
+    </div>
+  </div>
+
+  <div id="documentation">
+
+    <div id="description">
+      
+        <h1>Metadata</h1>
+      
+
+      <p>
+<a href="Metadata.html">Metadata</a> belongs to the project being scaffold.
+</p>
+<p>
+TODO: Support POM::Metadata
+</p>
+
+    </div>
+
+    <!-- Constants -->
+    
+    <div id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt><a name="ROOT_INDICATORS">ROOT_INDICATORS</a></dt>
+        
+        <dd class="description"><p>
+Root directory is indicated by the presence of a <tt>meta/</tt> directory,
+or <tt>.meta/</tt> hidden directory.
+</p></dd>
+        
+      
+      </dl>
+    </div>
+    
+
+    <!-- Attributes -->
+    
+    <div id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="root-attribute-method" class="method-detail">
+        <a name="root"></a>
+        
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">root</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>
+Project root pathname.
+</p>
+        
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- Methods -->
+    
+    <div id="public-class-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="new-method" class="method-detail ">
+        <a name="M000023"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">new</span><span
+            class="method-args">(root=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="new-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/till/metadata.rb, line 20</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">root</span>=<span class="ruby-keyword kw">nil</span>)
+      <span class="ruby-ivar">@root</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">root</span>(<span class="ruby-identifier">root</span>) <span class="ruby-operator">||</span> <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">pwd</span>
+
+      <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">defined?</span>(<span class="ruby-constant">POM</span>)
+        <span class="ruby-ivar">@pom</span>  = <span class="ruby-constant">POM</span><span class="ruby-operator">::</span><span class="ruby-constant">Metadata</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@root</span>)
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-ivar">@pom</span>  = <span class="ruby-keyword kw">nil</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-ivar">@cache</span>  = {} <span class="ruby-comment cmt">#OpenStruct.new</span>
+
+      <span class="ruby-identifier">load_metadata</span>  <span class="ruby-comment cmt"># TODO: when pom supports arbitrary metadata, merge @pom and @cache into same variable.</span>
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+    </div>
+  
+    <div id="private-class-method-details" class="method-section section">
+      <h3 class="section-header">Private Class Methods</h3>
+
+    
+      <div id="locate-root-at-method" class="method-detail ">
+        <a name="M000031"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">locate_root_at</span><span
+            class="method-args">(indicator)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="locate-root-at-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/till/metadata.rb, line 107</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">locate_root_at</span>(<span class="ruby-identifier">indicator</span>)
+      <span class="ruby-identifier">root</span> = <span class="ruby-keyword kw">nil</span>
+      <span class="ruby-identifier">dir</span>  = <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">pwd</span>
+      <span class="ruby-keyword kw">while</span> <span class="ruby-operator">!</span><span class="ruby-identifier">root</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">dir</span> <span class="ruby-operator">!=</span> <span class="ruby-value str">'/'</span>
+        <span class="ruby-identifier">find</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">dir</span>, <span class="ruby-identifier">indicator</span>)
+        <span class="ruby-identifier">root</span> = <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">glob</span>(<span class="ruby-identifier">find</span>, <span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">FNM_CASEFOLD</span>).<span class="ruby-identifier">first</span>
+        <span class="ruby-comment cmt">#break if root</span>
+        <span class="ruby-identifier">dir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">dir</span>)
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">root</span> <span class="ruby-value">? </span><span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">root</span>) <span class="ruby-operator">:</span> <span class="ruby-keyword kw">nil</span>
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="root-method" class="method-detail ">
+        <a name="M000030"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">root</span><span
+            class="method-args">(local=Dir.pwd)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Locate the project&#8217;s root directory. This is determined by ascending
+up the directory tree from the current position until the <a
+href="Metadata.html#ROOT_INDICATORS">ROOT_INDICATORS</a> is matched.
+Returns <tt>nil</tt> if not found.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="root-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/till/metadata.rb, line 95</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">root</span>(<span class="ruby-identifier">local</span>=<span class="ruby-constant">Dir</span>.<span class="ruby-identifier">pwd</span>)
+      <span class="ruby-identifier">local</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">pwd</span>
+      <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">local</span>) <span class="ruby-keyword kw">do</span>
+        <span class="ruby-identifier">dir</span> = <span class="ruby-keyword kw">nil</span>
+        <span class="ruby-constant">ROOT_INDICATORS</span>.<span class="ruby-identifier">find</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">dir</span> = <span class="ruby-identifier">locate_root_at</span>(<span class="ruby-identifier">i</span>)
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-identifier">dir</span> <span class="ruby-value">? </span><span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">dir</span>)) <span class="ruby-operator">:</span> <span class="ruby-keyword kw">nil</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+    </div>
+  
+    <div id="public-instance-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-missing-method" class="method-detail ">
+        <a name="M000026"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">method_missing</span><span
+            class="method-args">(s, *a)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="method-missing-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/till/metadata.rb, line 35</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">method_missing</span>(<span class="ruby-identifier">s</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">a</span>)
+      <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">super</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">a</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@pom</span>
+        <span class="ruby-keyword kw">begin</span>
+          <span class="ruby-ivar">@pom</span>.<span class="ruby-identifier">__send__</span>(<span class="ruby-identifier">s</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">a</span>)
+        <span class="ruby-keyword kw">rescue</span>
+          <span class="ruby-ivar">@cache</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">s</span>.<span class="ruby-identifier">to_s</span>) <span class="ruby-operator">?</span> <span class="ruby-ivar">@cache</span>[<span class="ruby-identifier">s</span>.<span class="ruby-identifier">to_s</span>] <span class="ruby-operator">:</span> <span class="ruby-keyword kw">nil</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-ivar">@cache</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">s</span>.<span class="ruby-identifier">to_s</span>) <span class="ruby-operator">?</span> <span class="ruby-ivar">@cache</span>[<span class="ruby-identifier">s</span>.<span class="ruby-identifier">to_s</span>] <span class="ruby-operator">:</span> <span class="ruby-keyword kw">nil</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="to-h-method" class="method-detail ">
+        <a name="M000027"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">to_h</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Provide metadata to hash. Some (stencil) template systems need the data in
+hash form.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="to-h-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/till/metadata.rb, line 51</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_h</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@pom</span>
+        <span class="ruby-ivar">@pom</span>.<span class="ruby-identifier">to_h</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-ivar">@cache</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+    </div>
+  
+    <div id="private-instance-method-details" class="method-section section">
+      <h3 class="section-header">Private Instance Methods</h3>
+
+    
+      <div id="load-metadata-method" class="method-detail ">
+        <a name="M000028"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">load_metadata</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Load metadata. This serves as the fallback if POM is not used.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="load-metadata-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/till/metadata.rb, line 63</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">load_metadata</span>
+      <span class="ruby-constant">Dir</span>[<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">metadir</span>, <span class="ruby-value str">'*'</span>)].<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">val</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">f</span>).<span class="ruby-identifier">strip</span>
+        <span class="ruby-identifier">val</span> = <span class="ruby-constant">YAML</span>.<span class="ruby-identifier">load</span>(<span class="ruby-identifier">val</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">val</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/\A---/</span>
+        <span class="ruby-ivar">@cache</span>[<span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">f</span>)] = <span class="ruby-identifier">val</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="metadir-method" class="method-detail ">
+        <a name="M000029"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">metadir</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+What is project root&#8217;s metadirectory?
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="metadir-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/till/metadata.rb, line 73</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">metadir</span>
+      <span class="ruby-ivar">@metadir</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Dir</span>[<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">root</span>, <span class="ruby-value str">'{.meta,meta}/'</span>)].<span class="ruby-identifier">first</span> <span class="ruby-operator">||</span> <span class="ruby-value str">'.meta/'</span>
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+    </div>
+  
+
+  </div>
+
+
+  <div id="rdoc-debugging-section-dump" class="debugging-section">
+  
+    <p>Disabled; run with --debug to generate this.</p>
+  
+  </div>
+
+</main>
+</body>
+</html>
+

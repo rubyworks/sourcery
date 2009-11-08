@@ -1,0 +1,11 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: []
+
+full_name: Till::Runner::new
+is_singleton: true
+name: new
+params: (files, options)
+visibility: public

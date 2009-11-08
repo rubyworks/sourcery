@@ -1,0 +1,11 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: []
+
+full_name: Till::Inline#render_inline
+is_singleton: false
+name: render_inline
+params: (file)
+visibility: public

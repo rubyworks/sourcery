@@ -1,9 +1,18 @@
 --- !ruby/object:RDoc::RI::ClassDescription 
-attributes: []
-
+attributes: 
+- !ruby/object:RDoc::RI::Attribute 
+  comment: 
+  - !ruby/struct:RDoc::Markup::Flow::P 
+    body: Project root pathname.
+  name: root
+  rw: R
 class_methods: 
 - !ruby/object:RDoc::RI::MethodSummary 
+  name: locate_root_at
+- !ruby/object:RDoc::RI::MethodSummary 
   name: new
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: root
 comment: 
 - !ruby/struct:RDoc::Markup::Flow::P 
   body: Metadata belongs to the project being scaffold.
@@ -15,8 +24,13 @@ comment:
   body: Metadata belongs to the project being scaffold.
 - !ruby/struct:RDoc::Markup::Flow::P 
   body: "TODO: Support POM::Metadata"
-constants: []
-
+constants: 
+- !ruby/object:RDoc::RI::Constant 
+  comment: 
+  - !ruby/struct:RDoc::Markup::Flow::P 
+    body: Root directory is indicated by the presence of a <tt>meta/</tt> directory, or <tt>.meta/</tt> hidden directory.
+  name: ROOT_INDICATORS
+  value: "[ '{.meta,meta}/' ]"
 full_name: Till::Metadata
 includes: []
 
@@ -27,5 +41,7 @@ instance_methods:
   name: metadir
 - !ruby/object:RDoc::RI::MethodSummary 
   name: method_missing
+- !ruby/object:RDoc::RI::MethodSummary 
+  name: to_h
 name: Metadata
 superclass: Object

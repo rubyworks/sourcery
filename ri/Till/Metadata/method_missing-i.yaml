@@ -2,7 +2,8 @@
 aliases: []
 
 block_params: 
-comment: 
+comment: []
+
 full_name: Till::Metadata#method_missing
 is_singleton: false
 name: method_missing

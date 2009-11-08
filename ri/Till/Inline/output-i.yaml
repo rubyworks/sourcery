@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Output file (same as the input file).
+full_name: Till::Inline#output
+is_singleton: false
+name: output
+params: ()
+visibility: public

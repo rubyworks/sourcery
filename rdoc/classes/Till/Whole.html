@@ -1,0 +1,827 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+  <title>Class: Till::Whole</title>
+
+  
+    <link rel="SHORTCUT ICON" href="../../assets/icon/class.png">
+  
+
+  <link type="text/css" rel="stylesheet" href="../../assets/rdoc.css" media="screen" />
+  <link type="text/css" rel="stylesheet" href="../../assets/highlight/styles/github.css" title="GitHub" />
+
+  <script type="text/javascript" charset="utf-8" src="../../assets/jquery.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../../assets/highlight/highlight.pack.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../../assets/quicksearch.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../../assets/main.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready( function() {
+      hookHighlightSyntax();
+	    hookSourceViews();
+	    hookDebuggingToggle();
+	    hookQuickSearch();
+	    highlightLocationTarget();
+
+	    $('ul.link-list a').bind("click", highlightClickTarget);
+    });
+  </script>
+</head>
+<body class="class">
+<div id="main">
+
+  <div class="head">
+    <h1>
+      
+        <img src="../../assets/icon/class.png" align="absmiddle">&nbsp;
+      
+      <a href="../../index.html">Till</a>&nbsp;
+      <a href="/">Till::Whole</a>
+    </h1>
+  </div>
+
+  <div id="metadata">
+    <div id="project-metadata">
+
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li class="file"><a href="../../files/lib/till/whole_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/till/whole.rb">lib/till/whole.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      <!-- What about Git info, or Hg info? This seems almost silly, albeit kind of cool. -->
+      <!-- TODO: generalize this for all SCMs -->
+
+      
+    </div>
+
+    <div id="class-metadata">
+
+      <!-- Parent Class -->
+      
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        <ul>
+          
+          <li class="class">Object</li>
+          
+        </ul>
+      </div>
+      
+
+      <!-- Namespace Contents -->
+      
+
+      <!-- Method Quickref -->
+      
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+            
+            <li class="singleton">
+              <a href="#M000032">::new</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000041">#changed?</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000040">#exist?</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000035">#filters=</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000034">#format=</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000033">#output=</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000039">#relative_output</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000037">#render</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000038">#render_tilt</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000036">#root</a>
+            </li>
+          
+            
+            <li class="method">
+              <a href="#M000042">#save</a>
+            </li>
+          
+        </ul>
+      </div>
+      
+
+      <!-- Included Modules -->
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Information</h3>
+        <ul>
+        
+          <li class="file"><a href="../../files/HISTORY.html">HISTORY</a></li>
+        
+          <li class="file"><a href="../../files/LICENSE.html">LICENSE</a></li>
+        
+          <li class="file"><a href="../../files/README.html">README</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class Index
+          <span class="search-toggle"><img src="../../assets/icon/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <!-- classpage.html : classes -->
+        <ul class="link-list">
+        
+          <li class="module"><a href="../../classes/Till.html">Till</a></li>
+        
+          <li class="class"><a href="../../classes/Till/Context.html">Till::Context</a></li>
+        
+          <li class="class"><a href="../../classes/Till/Inline.html">Till::Inline</a></li>
+        
+          <li class="class"><a href="../../classes/Till/Metadata.html">Till::Metadata</a></li>
+        
+          <li class="class"><a href="../../classes/Till/Runner.html">Till::Runner</a></li>
+        
+          <li class="class"><a href="../../classes/Till/Whole.html">Till::Whole</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+    </div>
+
+    <div id="validator-badges">
+      
+      <div style="float: right; margin-right: 5px;">
+        <a href="http://validator.w3.org/check/referer"><img src="../../assets/icon/check.png" alt="[Validate]" height="16" width="16" /></a>
+      </div>
+      Generated with <a href="http://github.com/proutils/webri">WebRI Redfish</a> 1.0.0
+      <br/><br/>
+    </div>
+  </div>
+
+  <div id="documentation">
+
+    <div id="description">
+      
+
+      <h1><a href="Whole.html">Whole</a> Templating</h1>
+
+    </div>
+
+    <!-- Constants -->
+    
+
+    <!-- Attributes -->
+    
+    <div id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="file-attribute-method" class="method-detail">
+        <a name="file"></a>
+        
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">file</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>
+Template fle to render.
+</p>
+        
+        </div>
+      </div>
+      
+      <div id="location-attribute-method" class="method-detail">
+        <a name="location"></a>
+        
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">location</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>
+Dirname of the template <tt>file</tt>.
+</p>
+        
+        </div>
+      </div>
+      
+      <div id="format-attribute-method" class="method-detail">
+        <a name="format"></a>
+        
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">format</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>
+Format of the template in terms of extname.
+</p>
+        
+        </div>
+      </div>
+      
+      <div id="output-attribute-method" class="method-detail">
+        <a name="output"></a>
+        
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">output</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>
+Where to output rendered result (defaults to <tt>file</tt> w/o
+<tt>extension</tt>).
+</p>
+        
+        </div>
+      </div>
+      
+      <div id="filters-attribute-method" class="method-detail">
+        <a name="filters"></a>
+        
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">filters</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>
+List of redering filters to processes file through (defaults to
+<tt>extension</tt> plus <tt>erb</tt>).
+</p>
+        
+        </div>
+      </div>
+      
+      <div id="result-attribute-method" class="method-detail">
+        <a name="result"></a>
+        
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">result</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>
+Stores the rendered result, after <a href="Whole.html#M000037">render</a>
+is called.
+</p>
+        
+        </div>
+      </div>
+      
+      <div id="context-attribute-method" class="method-detail">
+        <a name="context"></a>
+        
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">context</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>
+Context/scope of template rendering.
+</p>
+        
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- Methods -->
+    
+    <div id="public-class-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="new-method" class="method-detail ">
+        <a name="M000032"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">new</span><span
+            class="method-args">(file)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="new-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/till/whole.rb, line 67</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">file</span>)
+      <span class="ruby-ivar">@file</span> = <span class="ruby-identifier">file</span>
+
+      <span class="ruby-keyword kw">case</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">extname</span>(<span class="ruby-identifier">file</span>)
+      <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'.till'</span>
+        <span class="ruby-identifier">fname</span> = <span class="ruby-identifier">file</span>.<span class="ruby-identifier">chomp</span>(<span class="ruby-value str">'.till'</span>)
+      <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'.til'</span>
+        <span class="ruby-identifier">fname</span> = <span class="ruby-identifier">file</span>.<span class="ruby-identifier">chomp</span>(<span class="ruby-value str">'.til'</span>)
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">fname</span> = <span class="ruby-identifier">file</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-comment cmt">#@format    = File.extname(fname)</span>
+      <span class="ruby-ivar">@location</span>  = <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">file</span>))
+
+      <span class="ruby-identifier">text</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">file</span>).<span class="ruby-identifier">rstrip</span>
+
+      <span class="ruby-comment cmt"># front matter indicator</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">text</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/\A---/</span>
+        <span class="ruby-identifier">text</span> = <span class="ruby-identifier">text</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp re">/---.*?\n/</span>, <span class="ruby-value str">''</span>)
+        <span class="ruby-identifier">meta</span>, <span class="ruby-identifier">body</span> = <span class="ruby-operator">*</span><span class="ruby-identifier">text</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp re">/^---/</span>)
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">meta</span> = <span class="ruby-keyword kw">nil</span>
+        <span class="ruby-identifier">body</span> = <span class="ruby-identifier">text</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-ivar">@content</span> = <span class="ruby-identifier">body</span>
+
+      <span class="ruby-identifier">fm</span> = <span class="ruby-identifier">meta</span> <span class="ruby-value">? </span><span class="ruby-constant">YAML</span>.<span class="ruby-identifier">load</span>(<span class="ruby-identifier">meta</span>) <span class="ruby-operator">:</span> {}
+
+      <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">filters</span> = <span class="ruby-identifier">fm</span>[<span class="ruby-value str">'filter'</span>] <span class="ruby-operator">||</span> [<span class="ruby-value str">'erb'</span>]
+
+      <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">format</span> = <span class="ruby-identifier">fm</span>[<span class="ruby-value str">'format'</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">extname</span>(<span class="ruby-identifier">fname</span>)
+
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">fm</span>[<span class="ruby-value str">'output'</span>]
+        <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">output</span> = <span class="ruby-identifier">fm</span>[<span class="ruby-value str">'output'</span>]
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">output</span> = <span class="ruby-identifier">fname</span>  <span class="ruby-comment cmt">#.chomp(extension) #+ DEFAULT_CONVERSIONS[filters.last]</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-ivar">@context</span> = <span class="ruby-constant">Context</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@location</span>)  <span class="ruby-comment cmt"># prime context/scope</span>
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+    </div>
+  
+    <div id="public-instance-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="changed--method" class="method-detail ">
+        <a name="M000041"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">changed?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Is the current rendering different then the output file&#8217;s content?
+This will call <a href="Whole.html#M000037">render</a> if it hasn&#8217;t
+been called yet.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="changed--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/till/whole.rb, line 188</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">changed?</span>
+      <span class="ruby-identifier">render</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">result</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">exist?</span>
+        <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">output</span>) <span class="ruby-operator">!=</span> <span class="ruby-identifier">result</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-keyword kw">true</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="exist--method" class="method-detail ">
+        <a name="M000040"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">exist?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Does the output file exist?
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="exist--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/till/whole.rb, line 181</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">exist?</span>
+      <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-identifier">output</span>)
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="filters--method" class="method-detail ">
+        <a name="M000035"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">filters=</span><span
+            class="method-args">(list)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="filters--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/till/whole.rb, line 137</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">filters=</span>(<span class="ruby-identifier">list</span>)
+      <span class="ruby-ivar">@filters</span> = [<span class="ruby-identifier">list</span>].<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">map</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp re">/^\./</span>,<span class="ruby-value str">''</span>) }
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="format--method" class="method-detail ">
+        <a name="M000034"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">format=</span><span
+            class="method-args">(ext)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="format--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/till/whole.rb, line 123</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">format=</span>(<span class="ruby-identifier">ext</span>)
+      <span class="ruby-identifier">ext</span> = <span class="ruby-identifier">ext</span>.<span class="ruby-identifier">to_s</span>
+      <span class="ruby-identifier">ext</span> = (<span class="ruby-identifier">ext</span>[<span class="ruby-value">0</span>,<span class="ruby-value">1</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">'.'</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">ext</span> <span class="ruby-operator">:</span> <span class="ruby-node">&quot;.#{ext}&quot;</span>)
+      <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">ext</span>
+      <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'.md'</span>
+        <span class="ruby-identifier">ext</span> = <span class="ruby-value str">'.markdown'</span>
+      <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'.tt'</span>
+        <span class="ruby-identifier">ext</span> = <span class="ruby-value str">'.textile'</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-ivar">@format</span> = <span class="ruby-identifier">ext</span>
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="output--method" class="method-detail ">
+        <a name="M000033"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">output=</span><span
+            class="method-args">(path)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="output--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/till/whole.rb, line 112</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">output=</span>(<span class="ruby-identifier">path</span>)
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">path</span>[<span class="ruby-value">0</span>,<span class="ruby-value">1</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">'/'</span>
+        <span class="ruby-identifier">path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">root</span>, <span class="ruby-identifier">path</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>])
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">location</span>, <span class="ruby-identifier">path</span>)
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-ivar">@output</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">path</span>)
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="relative-output-method" class="method-detail ">
+        <a name="M000039"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">relative_output</span><span
+            class="method-args">(dir=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="relative-output-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/till/whole.rb, line 174</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">relative_output</span>(<span class="ruby-identifier">dir</span>=<span class="ruby-keyword kw">nil</span>)
+      <span class="ruby-identifier">dir</span> = <span class="ruby-identifier">dir</span> <span class="ruby-operator">||</span> <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">pwd</span>
+      <span class="ruby-identifier">output</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-identifier">dir</span><span class="ruby-operator">+</span><span class="ruby-value str">'/'</span>, <span class="ruby-value str">''</span>)
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="render-method" class="method-detail ">
+        <a name="M000037"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">render</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="render-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/till/whole.rb, line 149</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">render</span>
+      <span class="ruby-identifier">text</span> = <span class="ruby-ivar">@content</span>
+      <span class="ruby-identifier">filters</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">filter</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">filter</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'html'</span>  <span class="ruby-comment cmt"># TODO: +next+ if html format and html filter ?</span>
+          <span class="ruby-identifier">template</span> = <span class="ruby-constant">Tilt</span>[<span class="ruby-identifier">format</span>]
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-identifier">template</span> = <span class="ruby-constant">Tilt</span>[<span class="ruby-identifier">filter</span>]
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;unknown filter #{filter}&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">template</span>
+        <span class="ruby-identifier">text</span> = <span class="ruby-identifier">render_tilt</span>(<span class="ruby-identifier">template</span>.<span class="ruby-identifier">new</span>{ <span class="ruby-identifier">text</span> })
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-ivar">@result</span> = <span class="ruby-identifier">text</span>
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="render-tilt-method" class="method-detail ">
+        <a name="M000038"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">render_tilt</span><span
+            class="method-args">(template)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code"
+            id="render-tilt-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/till/whole.rb, line 166</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">render_tilt</span>(<span class="ruby-identifier">template</span>)
+      <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">location</span>) <span class="ruby-keyword kw">do</span>
+        <span class="ruby-identifier">template</span>.<span class="ruby-identifier">render</span>(<span class="ruby-identifier">context</span>)
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="root-method" class="method-detail ">
+        <a name="M000036"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">root</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+TODO: Get root from POM
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="root-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/till/whole.rb, line 143</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">root</span>
+      <span class="ruby-identifier">context</span>.<span class="ruby-identifier">metadata</span>.<span class="ruby-identifier">root</span>
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+      <div id="save-method" class="method-detail ">
+        <a name="M000042"></a>
+
+        <div class="method-heading">
+        
+          <span class="method-name">save</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        
+        </div>
+
+        <div class="method-description">
+          
+          <p>
+Save the rendering to the output file. This will call <a
+href="Whole.html#M000037">render</a> if it hasn&#8217;t been called yet.
+</p>
+          
+
+          
+          <div class="method-source-code"
+            id="save-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/till/whole.rb, line 200</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">save</span>
+      <span class="ruby-identifier">render</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">result</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-identifier">output</span>)
+        <span class="ruby-identifier">mode</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">stat</span>(<span class="ruby-identifier">output</span>).<span class="ruby-identifier">mode</span>
+        <span class="ruby-constant">File</span>.<span class="ruby-identifier">chmod</span>(<span class="ruby-identifier">mode</span> <span class="ruby-operator">|</span> <span class="ruby-value">0000220</span>, <span class="ruby-identifier">output</span>)
+        <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">output</span>, <span class="ruby-value str">'w'</span>){ <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">result</span> }
+        <span class="ruby-constant">File</span>.<span class="ruby-identifier">chmod</span>(<span class="ruby-identifier">mode</span>, <span class="ruby-identifier">output</span>)
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">output</span>, <span class="ruby-value str">'w'</span>){ <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">result</span> }
+        <span class="ruby-constant">File</span>.<span class="ruby-identifier">chmod</span>(<span class="ruby-value">0440</span>, <span class="ruby-identifier">output</span>)  <span class="ruby-comment cmt"># change to read-only mode</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+      </div>
+
+    
+    </div>
+  
+
+  </div>
+
+
+  <div id="rdoc-debugging-section-dump" class="debugging-section">
+  
+    <p>Disabled; run with --debug to generate this.</p>
+  
+  </div>
+
+</main>
+</body>
+</html>
+

@@ -2,9 +2,10 @@
 aliases: []
 
 block_params: 
-comment: 
+comment: []
+
 full_name: Till::Metadata::new
 is_singleton: true
 name: new
-params: (output)
+params: (root=nil)
 visibility: public

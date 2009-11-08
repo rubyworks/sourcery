@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: Search for till templates (*.till) and render.
+full_name: Till::Runner#till_whole_template
+is_singleton: false
+name: till_whole_template
+params: (file)
+visibility: public

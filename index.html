@@ -51,7 +51,7 @@
       <li><a href="#section_synopsis">SYNOPSIS</a></li>
       <li><a href="#section_how_to_install">HOW TO INSTALL</a></li>
       <li><a href="#section_limitations">LIMITATIONS</a></li>
-      <li><a href="#section_copyright_&amp;_license">COPYRIGHT &amp; LICENSE</a></li>
+      <li><a href="#section_copyright_license">COPYRIGHT &amp; LICENSE</a></li>
     </ul>
   </div>
 </div>
@@ -59,95 +59,177 @@
 <div id="main" class="hued">
 <div class="page">
 
-<div class="section" id="section_description"><h2>DESCRIPTION</h2>
-<p>
-Till is a simple project-oriented eRuby-based template system using POM
-metadata.
-</p>
+<div class="section" id="section_description">
+
+<h2>DESCRIPTION</h2>
+
+<p>Till is an easy to use project-oriented templating utility, with built-in POM metadata support.</p>
+
 </div>
 
+
 <div class="section" id="section_features"><h2>FEATURES</h2>
+
 <ul>
-<li>Easy to use.
-
-</li>
-<li>Used eRuby. Easy.
-
-</li>
-<li>Uses POM metadata. Easy.
-
-</li>
-<li>Templates go where the file goes. Easy.
-
-</li>
-<li>Did I mention it was easy?
-
-</li>
+<li>Easy to use.</li>
+<li>Uses <a href="http://github.com/rtomayko/tilt">Tilt</a> for deverse format support. Versitle and Easy.</li>
+<li>Uses <a href="http://proutils.github.com/pom">POM</a> metadata to provide common template variables. Smart and Easy.</li>
+<li>Templates live where the files live (if you want). Damn that's Easy.</li>
+<li>Did I mention it was easy?</li>
 </ul>
-</div><div class="section" id="section_synopsis"><h2>SYNOPSIS</h2>
-<p>
-Create an template file, such as README.till.
-</p>
-<p>
-In a Ruby script add a till comment.
-</p>
+
+</div>
+
+
+<div class="section" id="section_synopsis">
+
+<h2>SYNOPSIS</h2>
+
+<p>Till supports two types of templating, traditional whole file templating
+and inline templating. All templates, whether whole file or inline, have access
+to a project POM metadata in the rendering context.</p>
+
+
+<h3>Whole File Templating</h3>
+
+<p>Whole file templating takes a designated template, renders it according
+to a specified sequence of filters and then saves it to a designated output.</p>
+
+<p>Till template files require an extension of <code>.til</code> or <code>.till</code>
+<!-- (the extension may become optional in the future) -->. Till templates use YAML front
+matter to specifiy there filter and output options. Here is an example <code>README.til</code>
+file.</p>
+
+<pre>
+---
+output: README.rdoc
+format: rdoc
+filter: erb
+---
+
+= <%= title %>
+
+<%= title %> is such a wonderful project.
+
+Copyright <%= released.strftime("%Y") %> <%= author %>
+</pre>
+
+<p>If YAML front matter is NOT provided, then the template will be rendered via Erb to a
+file less the <code>.til</code> or <code>.till</code> extension. Eg. <code>README.til</code> would
+be processed by Erb to produce <code>README</code>.</p>
+
+<p>Because <a href="http://github.com/proutils/till">Till</a> uses <a href="http://github.com/rtomayko/tilt">Tilt</a>,
+a number of filtering options are available. There are three types of filters: <i>formatters</i>,
+<i>stencils</i> and <i>miscellaneous</i>. Formatters handle layout and depend on the format of the
+given document. A good example of such a filter is <code>html</code> which converts the given format,
+eg. markdown, to html. A stencil filter, on the other hand, handles dynamic content, interpolating
+variable substituations. <code>erb</code>, <code>liquid</code> and <code>mustache</code> are all
+examples of supported stencils. Miscellaneous filters handle odd-and-end transforms, for instance
+a custom filter might be used to mask curse words.</p>
+
+
+<h3>Inline Templating</h3>
+
+<p>Inline, or inplace, templating makes it possible to add dynamic rederings
+to otherwise static files, without the need for separate template files. This if
+acheived by utilizing a file types support of comments --so this is only possible
+with specific file types. Currently only Ruby <code>.rb</code> files are supported.</p>
+
+<p>Inline templating is indicated by the <code>:till:</code> marker.
+For example, in a Ruby script we might add an inline till comment as follows:</p>
+
 <pre>
   module YourLibrary
-    VERSION = &quot;1.0.0&quot; #:till: VERSION=&quot;&lt;%= version %&gt;&quot;
+    VERSION = &quot;1.0.0&quot;  #:till: VERSION = &quot;&lt;%= version %&gt;&quot;
   end
 </pre>
-<p>
-Then run:
-</p>
+
+<p>As given, an inline template will replace the whole line when rendered (albiet honoring indention).
+We can use the <code>^</code> match carrot to indicate that the rendering should only replace
+the line from the matching text onward. Notice also in this next example that we can template
+comments as well.</p>
+
 <pre>
-  $ till
+  # Generated on XXXX  #:till: ^on <%= Time.now %>
 </pre>
-<p>
-All .till files and all #:till: inline templates will be filled in.
-</p>
-</div><div class="section" id="section_how_to_install"><h2>HOW TO INSTALL</h2>
-<p>
-Describe your installation procedure here.
-</p>
-<p>
-To install with RubyGems simply open a console and type:
-</p>
+
+<p>I have choosen this example because it elucidates a potential gotcha in creating such inline templates.
+Notice we match "<code>on</code>". When rendered this line will have a time stamp, eg:
+
 <pre>
-  $ gem install till
+  # Generated on Mon Nov 08 13:54:04 -0500 2009  #:till: ^on <%= Time.now %>
 </pre>
-<p>
-Local installation requires Setup.rb (gem install setup), then download the
-tarball package and type:
-</p>
+
+<p>The catch here, is that the next time this is renderd it will match the "<code>on</code>" in "<code>Mon</code>"
+and not the one intended. That something to watch out for. In this case we might replace "<code>on</code>"
+with "<code>@</code>" as a simple fix.</p>
+
+<p>Inline templates can also handle mutiple line substitiuation. This is acheived by specifying
+the number of lines to absorb in the till marker.</p>
+
+<pre>
+  # :till+3: <%= Dir['*'].join("\n") %>
+  file1
+  file2
+  file3
+</pre>
+
+<p>Notice the <code>+3</code>. This indicates that the next three lines (after any additional comment lines) are to be replaced
+by this rendering.</p>
+
+<h3>Running the <code>till</code> Command</h3>
+
+<p>The till command simply takes the files you with to render as arguents. If a directory is provided
+rather than a file, any tillable files within the directory will be included.  Eg.</p>
+
+<pre>
+  $ till **/*.rb **/*.til
+</pre>
+
+<p>All .til files and all #:till: inline templates will be filled in.</p>
+
+<!--
+<p>Front matter options can be overridden on the command-line.</p>
+-->
+
+</div>
+
+<div class="section" id="section_how_to_install">
+
+<h2>HOW TO INSTALL</h2>
+
+<p>To install with RubyGems simply open a console and type:</p>
+
+<pre>
+  $ sudo gem install till
+</pre>
+
+<p>Local installation requires Setup.rb (gem install setup), then download the
+tarball package and type:</p>
+
 <pre>
   $ tar -xvzf till-1.0.0.tar.gz
   $ cd till-1.0.0.tar.gz
   $ sudo setup.rb all
 </pre>
-<p>
-Windows users use &#8216;ruby setup.rb all&#8217;.
-</p>
-</div><div class="section" id="section_limitations"><h2>LIMITATIONS</h2>
-<p>
-Multiline inline ruby templating is not yet supported. Would love to
-implement but need idea on how best to do it.
-</p>
-<p>
-Also, currently the POM library is not used for accessing meta/ files. This
-will change once POM properly supports arbitrary metadata.
-</p>
-</div><div class="section" id="section_copyright_&amp;_license"><h2>COPYRIGHT &amp; LICENSE</h2>
-<p>
-Copyright &#169; 2009 Thomas Sawyer
-</p>
-<p>
-This program is ditributed unser the terms of the GPL v3 license.
-</p>
-<p>
-See LICENSE file for details.
-</p>
+
+<p>Windows users will not need the <code>sudo</code>, but will probably need to be
+logged-in as an admistrator of the system.</p>
+
 </div>
-  </div>
+
+
+<div class="section" id="section_copyright_license"><h2>COPYRIGHT &amp; LICENSE</h2>
+
+<p>Copyright &#169; 2009 Thomas Sawyer</p>
+
+<p>This program is ditributed unser the terms of the GPL v3 license.</p>
+
+<p>See LICENSE file for details.</p>
+
+</div>
+
+</div>
 </div>
 
 <div id="footer">

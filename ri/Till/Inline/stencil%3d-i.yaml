@@ -1,0 +1,11 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: []
+
+full_name: Till::Inline#stencil=
+is_singleton: false
+name: stencil=
+params: (ext)
+visibility: public

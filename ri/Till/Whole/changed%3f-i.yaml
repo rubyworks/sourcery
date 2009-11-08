@@ -1,0 +1,12 @@
+--- !ruby/object:RDoc::RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:RDoc::Markup::Flow::P 
+  body: "Is the current rendering different then the output file's content? This will call #render if it hasn't been called yet."
+full_name: Till::Whole#changed?
+is_singleton: false
+name: changed?
+params: ()
+visibility: public

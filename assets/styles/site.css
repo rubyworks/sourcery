@@ -3,6 +3,7 @@
 a { color: #0C0; }
 h1 { font-size: 64px; margin: 20px 0; color: #0C0; }
 h2 { margin-top: 30px; color: #0C0; }
+h3 { color: #0C0; font-weight: bold; }
 
 pre { background: white; -moz-border-radius: 10px; color: #FF5599; font-weight: bold; padding: 20px 10px 20px 10px; }
 
@@ -12,8 +13,8 @@ pre { background: white; -moz-border-radius: 10px; color: #FF5599; font-weight: 
 .page { width: 760px; margin: 0 auto; }
 
 .hued {
-  background: #bbFFbb;
-  color: #575;
+  background: #ccFFcc;
+  color: #353;
 }
 .heud a    { color: #55FF99; }
 .heud code { color: #555; }
@@ -34,8 +35,8 @@ pre { background: white; -moz-border-radius: 10px; color: #FF5599; font-weight: 
 #header h1 { font-size: 140px; font-weight: bold; color: #0C0; font-family: courier, monospace; padding-top: 35px; margin: 0; }
 
 #main { border-bottom: 2px solid pink; padding: 10px 0 30px 0; }
-#main p { font-weight: bold; }
-#main li { font-weight: bold; }
+#main p { font-family: "Lucida Console"; }
+#main li { }
 
 #footer { padding: 20px; text-align: center; margin: 0 auto; width: 800px; }
 #footer .copyright { color: #0C0; padding-top: 40px; font-family: monospace; font-weight: bold; font-size: 90%; line-height: 150%; }
