@@ -150,7 +150,7 @@ module Till
     #
 
     def relative_output(dir=nil)
-      dir = dir || root
+      dir = dir || Dir.pwd
       output.sub(dir+'/', '')
     end
 
