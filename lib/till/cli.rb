@@ -21,6 +21,10 @@ usage = OptionParser.new do |use|
     options[:skip] = true
   end
 
+  use.on('-o', '--stdout', 'dump output to stdout instead of saving') do
+    options[:stdout] = true
+  end
+
   use.on('-t', '--trial', 'run in trial mode') do
     $TRIAL = true
   end
