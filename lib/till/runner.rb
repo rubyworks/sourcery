@@ -20,6 +20,8 @@ module Till
 
     attr_accessor :skip
 
+    attr_accessor :stdout
+
     #attr_accessor :delete
 
 
@@ -35,9 +37,10 @@ module Till
           file
         end
       end.flatten
-      @files = files
-      @force = options[:force]
-      @skip  = options[:skip]
+      @files  = files
+      @force  = options[:force]
+      @skip   = options[:skip]
+      @stdout = options[:stdout]
       #@delete = options[:delete]
     end
 
@@ -62,16 +65,26 @@ module Till
     #  @rubyfiles ||= Dir[File.join(@output, '**/*.rb')].select{ |f| File.file?(f) }
     #end
 
+    #def whole
+    #  @whole ||= Whole.new
+    #end
+
+    #def inline
+    #  @inline ||= Inline.new
+    #end
+
+    #
+
     def till
-      files.each do |file|
-        raise "unsupport file type -- #{file}" unless File.extname(file) =~ /^\.(rb|til|till)$/
-      end
+      #files.each do |file|
+      #  raise "unsupport file type -- #{file}" unless File.extname(file) =~ /^\.(rb|til|till)$/
+      #end
 
       files.each do |file|
         case File.extname(file)
         when '.till', '.til'
           till_whole_template(file)
-        when '.rb'
+        else
           till_inline_template(file)
         end
       end
@@ -84,8 +97,12 @@ module Till
       if template.exist? && skip?
         puts "  #{template.relative_output} skipped"
       else
-        template.render
-        save(template)
+        result = template.render
+        if stdout
+          puts result
+        else
+          save(template, result)
+        end
       end
       #result = erb(File.read(file))
       #fname = file.chomp(File.extname(file))
@@ -94,17 +111,26 @@ module Till
 
     # Search through Ruby files for inline till templates.
     def till_inline_template(file)
-      template = Inline.new(file)
+      parser = Inline.factory(file)
+      if !parser
+        puts "  unrecognized #{file}" if $DEBUG || $TRIAL
+        return
+      end
+      template = parser.new(file)
       if template.exist? && skip?
         puts "  #{template.relative_output} skipped"
       else
-        template.render
-        save(template)
+        result = template.render
+        if stdout
+          puts result
+        else
+          save(template, result)
+        end
       end   
     end
 
     #
-    def save(template) #fname, text)
+    def save(template, result)
       name = template.relative_output
       save = false
       if trial?

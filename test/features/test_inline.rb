@@ -7,14 +7,14 @@ class TC_Till_Inline < Test::Unit::TestCase
     @tmpdir = File.join(Dir.tmpdir, 'till/')
     FileUtils.rm_r(@tmpdir) if File.exist?(@tmpdir)
     FileUtils.mkdir_p(@tmpdir)
-    FileUtils.cp_r('test/fixture', @tmpdir)
+    FileUtils.cp_r('test/features/fixture', @tmpdir)
   end
 
   def test_fixture
     out = File.join(@tmpdir, "fixture/inline.rb")
     system "till -f #{out}"
 
-    expect = File.read('test/proofs/inline.rb')
+    expect = File.read('test/features/proofs/inline.rb')
     result = File.read(out)
 
     assert_equal(expect, result)

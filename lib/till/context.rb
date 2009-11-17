@@ -21,6 +21,11 @@ module Till
     end
 
     #
+    def root
+      metadata.root
+    end
+
+    #
 
     def to_h
       @metadata.to_h
