@@ -1,6 +1,6 @@
 module Till
 
-  # = Whole Templating
+  # = Whole Template
   #
   class Whole
 
@@ -39,16 +39,17 @@ module Till
 
     # A T T R I B U T E S
 
-    # Template fle to render.
+    # File pathname of the template file.
     attr :file
 
-    # Dirname of the template +file+.
+    # Directory location of the template +file+.
     attr :location
 
-    # Format of the template in terms of extname.
+    # Format of the template (in terms of extension names).
     attr :format
 
-    # Where to output rendered result (defaults to +file+ w/o +extension+).
+    # Where to save the rendered result (defaults to +file+ w/o it's extension).
+    # This is also often referred to as the *target*.
     attr :output
 
     # List of redering filters to processes file through (defaults to +extension+ plus +erb+).
@@ -56,6 +57,9 @@ module Till
 
     # Stores the rendered result, after #render is called.
     attr :result
+
+    # Body of file.
+    attr :content
 
     # Context/scope of template rendering.
     attr :context
@@ -67,11 +71,9 @@ module Till
     def initialize(file)
       @file = file
 
-      case File.extname(file)
-      when '.till'
-        fname = file.chomp('.till')
-      when '.til'
-        fname = file.chomp('.til')
+      case ext = File.extname(file)
+      when '.till', '.til'
+        fname = file.chomp(ext)
       else
         fname = file
       end
@@ -104,7 +106,9 @@ module Till
         self.output = fname  #.chomp(extension) #+ DEFAULT_CONVERSIONS[filters.last]
       end
 
-      @context = Context.new(@location)  # prime context/scope
+
+
+      #@context = Context.new(@location)  # prime context/scope
     end
 
     #
@@ -138,37 +142,6 @@ module Till
       @filters = [list].flatten.compact.map{ |f| f.sub(/^\./,'') }
     end
 
-    # TODO: Get root from POM
-
-    def root
-      context.metadata.root
-    end
-
-    #
-
-    def render
-      text = @content
-      filters.each do |filter|
-        if filter == 'html'  # TODO: +next+ if html format and html filter ?
-          template = Tilt[format]
-        else
-          template = Tilt[filter]
-        end
-        raise "unknown filter #{filter}" unless template
-        text = render_tilt(template.new{ text })
-      end
-
-      @result = text
-    end
-
-    #
-
-    def render_tilt(template)
-      Dir.chdir(location) do
-        template.render(context)
-      end
-    end
-
     #
 
     def relative_output(dir=nil)
@@ -180,6 +153,38 @@ module Till
 
     def exist?
       File.exist?(output)
+    end
+
+    #
+
+    def context
+      @context ||= Context.new(location)
+    end
+
+    # TODO: maybe bring root discovery up a level or two ?
+
+    def root 
+      context.metadata.root
+    end
+
+    # Render a whole template.
+
+    def render
+      context = Context.new(location)  # prime context/scope
+      result  = content
+
+      filters.each do |filter|
+        if filter == 'html'  # TODO: +next+ if html format and html filter ?
+          engine = Tilt[format]
+        else
+          engine = Tilt[filter]
+        end
+        raise "unknown filter #{filter}" unless engine
+        result = Dir.chdir(location) do
+          engine.new{result}.render(context)
+        end
+      end
+      @result = result
     end
 
     # Is the current rendering different then the output file's content?
