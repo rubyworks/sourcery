@@ -1,5 +1,5 @@
 require 'test/unit'
-require 'till/inline2'
+require 'till/inline'
 
 DIR = Pathname.new(__FILE__).parent
 
