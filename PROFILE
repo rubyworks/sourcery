@@ -1,0 +1,17 @@
+--- 
+title  : Till
+summary: K.I.S.S. Project Templating
+license: GPL
+contact: proutils@gogglegroups.com
+suite  : proutils
+authors: Thomas Sawyer
+created: 2009-07-15
+
+description:
+  Till is a simple project-oriented erb-based template system
+  using POM for metadata.
+
+resources:
+  homepage: http://proutils.github.com/till
+  repository: git://github.com/proutils/till.git
+
