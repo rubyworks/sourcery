@@ -161,11 +161,13 @@ module Sourcery
       mode = nil
       if File.exist?(file)
         mode = File.stat(file).mode
-        File.chmod(mode | 0000200, file)  # make writeable
+        mask = mode | 0000200
+        File.chmod(mask, file)  # make writeable
       end
       File.open(file, 'w'){ |f| f << text }
       mode = mode || File.stat(file).mode
-      #File.chmod(mode | 0000222, file)   # FIXME Make file read-only
+      mask = mode & (mode ^ 0000222)
+      File.chmod(mask, file)    # make read-only
     end
 
     #
