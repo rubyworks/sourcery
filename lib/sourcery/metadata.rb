@@ -3,28 +3,27 @@ module Sourcery
   #
   class Metadata
 
+    #
     # Project root pathname.
-
+    #
     attr :root
 
     #
-
+    # Initialize new Metadata object.
+    #
     def initialize(root=nil)
-      @root = self.class.root(root) || Dir.pwd
-
-      #if defined?(POM)
-      #  @pom  = POM::Metadata.new(@root)
-      #else
-      #  @pom  = nil
-      #end
-
+      #@root = self.class.root(root) || Dir.pwd
+      @root  = root || Dir.pwd
       @cache = {}
 
-      load_metadata  # TODO: when pom supports arbitrary metadata, merge @pom and @cache into same variable.
+      raise "not a directory -- #{root}" unless File.directory?(root)
+
+      load_metadata
     end
 
     #
-
+    # If method is missing see if there is a metadata entry for it.
+    #
     def method_missing(s, *a)
       m = s.to_s
       case m
@@ -37,28 +36,26 @@ module Sourcery
       end
     end
 
-    # Provide metadata to hash. Some (stencil) template systems
-    # need the data in hash form.
-
+    #
+    # Return copy of metadata store.
+    #
     def to_h
-      if @pom
-        @pom.to_h
-      else
-        @cache
-      end
+      @cache.dup
     end
 
   private
 
     #
-
+    # Load metadata.
+    #
     def load_metadata
       load_metadata_from_directory
       load_metadata_from_dotruby
     end
 
-    # Load metadata from meta_dir.
-
+    #
+    # Load metadata from metadata directory.
+    #
     def load_metadata_from_directory
       entries = Dir.glob(File.join(meta_dir, '*'))
       entries.each do |f|
@@ -68,8 +65,9 @@ module Sourcery
       end
     end
 
-    # Load metadata from metadata directory.
-
+    #
+    # Load metadata from .ruby file.
+    #
     def load_metadata_from_dotruby
       file = Dir[File.join(root, '.ruby')].first
       if file
@@ -77,12 +75,15 @@ module Sourcery
       end
     end
 
-    # Where is project's metadata directory?
-
+    #
+    # Locate the project's metadata directory. This is either
+    # `meta` or `.meta` or `var`.
+    #
     def meta_dir
-      @meta_dir ||= Dir[File.join(root, '{var,meta,.meta}/')].first || '.meta/'
+      @meta_dir ||= Dir[File.join(root, '{meta,.meta,var}/')].first || '.meta/'
     end
 
+    #
     #def load_value(name)
     #  file = File.join(metadir, name)
     #  file = Dir[file].first
@@ -92,14 +93,18 @@ module Sourcery
     #  end
     #end
 
-    # Root directory is indicated by the presence of a +src/+ directory.
+  public
 
+    #
+    # Root directory is indicated by the presence of a +src/+ directory.
+    #
     ROOT_INDICATORS = ['.ruby,var/,meta/,.meta/,.git,.hg,_darcs']
 
+    #
     # Locate the project's root directory. This is determined
     # by ascending up the directory tree from the current position
     # until the ROOT_INDICATORS is matched. Returns +nil+ if not found.
-
+    #
     def self.root(local=Dir.pwd)
       local ||= Dir.pwd
       Dir.chdir(local) do
@@ -111,6 +116,8 @@ module Sourcery
       end
     end
 
+    #
+    # Helper method for `Metadata.root()`.
     #
     def self.locate_root_at(indicator)
       root = nil
