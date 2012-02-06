@@ -3,9 +3,9 @@
 body{ background: url(../images/starfield.jpg) center -275px; }
 
 a { color: #C2C; }
-h1 { color: #EEF; text-shadow: 5px 5px 10px #99F; margin: 20px 0; font-size: 64px; }
-h2 { color: #EEF; text-shadow: 5px 5px 10px #99F; margin-top: 30px; padding-top: 10px; }
-h3 { color: #EEF; text-shadow: 5px 5px 10px #99F; font-weight: bold; }
+h1 { color: #EEF; text-shadow: 5px 5px 10px #77F; margin: 20px 0; font-size: 64px; }
+h2 { color: #EEF; text-shadow: 5px 5px 10px #77F; margin-top: 30px; padding-top: 10px; }
+h3 { color: #EEF; text-shadow: 5px 5px 10px #77F; font-weight: bold; }
 
 pre { background: white; border-radius: 10px; color: #FF5599; font-weight: bold; padding: 20px 10px 20px 10px;
   margin-bottom: 2em;
@@ -17,8 +17,8 @@ pre { background: white; border-radius: 10px; color: #FF5599; font-weight: bold;
 .page { width: 750px; margin: 0 auto; }
 
 .hued {
-  background: #000022;
-  color: #EFE;
+  background: #EEEEFF;
+  color: #001;
 }
 .heud a    { color: #55FF99; }
 .heud code { color: #555; }
@@ -30,9 +30,9 @@ pre { background: white; border-radius: 10px; color: #FF5599; font-weight: bold;
 
 /* SPECIAL */
 
-#nav { padding: 20px 60px 20px 0; text-align: center; color: pink; }
-#nav a { font-size: 100%; font-variant: small-caps; color: #EEF; font-weight: bold; }
-#nav a:hover { text-shadow: 5px 5px 10px #99F; text-decoration: none; }
+#nav { padding: 25px 60px 25px 0; text-align: center; color: pink; }
+#nav a { font-size: 100%; font-variant: small-caps; color: #44C; font-weight: bold; }
+#nav a:hover { text-shadow: 3px 3px 10px #99F; text-decoration: none; }
 
 #header { height: 240px; padding: 5px 0; border-top: 1px solid #000; border-bottom: 1px solid #000; text-align: left; }
 #header h1 { font-size: 140px; font-weight: bold; color: #000; font-family: courier, monospace; padding-top: 35px; margin: 0;
