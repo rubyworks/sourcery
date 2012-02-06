@@ -1,7 +1,6 @@
-MANIFEST
-doc/rdoc
-doc/ri
+.reap/digest
+.yardoc
+doc
 log
-pack
 pkg
 work/sandbox

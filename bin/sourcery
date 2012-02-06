@@ -1,3 +1,2 @@
 #!/usr/bin/env ruby
-
-load 'till/cli'
+require 'till/cli'

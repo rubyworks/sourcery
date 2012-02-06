@@ -1,47 +1,39 @@
-module Till
+module Sourcery
 
-  # Metadata belongs to the project being scaffold.
-  #
-  # TODO: Support POM::Metadata
   #
   class Metadata
 
-    #require 'facets/ostruct'
-
-    begin
-      require 'pom/metadata'
-    rescue LoadError
-    end
-
     # Project root pathname.
+
     attr :root
 
     #
+
     def initialize(root=nil)
       @root = self.class.root(root) || Dir.pwd
 
-      if defined?(POM)
-        @pom  = POM::Metadata.new(@root)
-      else
-        @pom  = nil
-      end
+      #if defined?(POM)
+      #  @pom  = POM::Metadata.new(@root)
+      #else
+      #  @pom  = nil
+      #end
 
-      @cache  = {} #OpenStruct.new
+      @cache = {}
 
       load_metadata  # TODO: when pom supports arbitrary metadata, merge @pom and @cache into same variable.
     end
 
     #
+
     def method_missing(s, *a)
-      return super unless a.empty?
-      if @pom
-        begin
-          @pom.__send__(s, *a)
-        rescue
-          @cache.key?(s.to_s) ? @cache[s.to_s] : nil
-        end
+      m = s.to_s
+      case m
+      when /=$/
+        raise ArgumentError if a.size != 1
+        @cache[s.to_s] = a.first
       else
-        @cache.key?(s.to_s) ? @cache[s.to_s] : nil
+        super(s, *a) unless a.empty?
+        @cache[s.to_s]
       end
     end
 
@@ -58,20 +50,36 @@ module Till
 
   private
 
-    # Load metadata. This serves as the fallback if POM is not used.
+    #
 
     def load_metadata
-      Dir[File.join(metadir, '*')].each do |f|
+      load_metadata_from_directory
+      load_metadata_from_dotruby
+    end
+
+    # Load metadata from meta_dir.
+
+    def load_metadata_from_directory
+      Dir[File.join(meta_dir, '*')].each do |f|
         val = File.read(f).strip
         val = YAML.load(val) if val =~ /\A---/
         @cache[File.basename(f)] = val
       end
     end
 
-    # What is project root's metadirectory?
+    # Load metadata from metadata directory.
 
-    def metadir
-      @metadir ||= Dir[File.join(root, '{.meta,meta}/')].first || '.meta/'
+    def load_metadata_from_directory
+      file = Dir[File.join(root, '.ruby')].first
+      if file
+        @cache.update(YAML.load_file(file))
+      end
+    end
+
+    # Where is project's metadata directory?
+
+    def meta_dir
+      @meta_dir ||= Dir[File.join(root, '{var,meta,.meta}/')].first || '.meta/'
     end
 
     #def load_value(name)
@@ -83,10 +91,9 @@ module Till
     #  end
     #end
 
-    # Root directory is indicated by the presence of a +meta/+ directory,
-    # or +.meta/+ hidden directory.
+    # Root directory is indicated by the presence of a +src/+ directory.
 
-    ROOT_INDICATORS = [ '{.meta,meta}/' ]
+    ROOT_INDICATORS = ['src/']
 
     # Locate the project's root directory. This is determined
     # by ascending up the directory tree from the current position
@@ -119,4 +126,3 @@ module Till
   end
 
 end
-

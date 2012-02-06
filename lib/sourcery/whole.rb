@@ -1,4 +1,4 @@
-module Till
+module Sourcery
 
   # = Whole Template
   #

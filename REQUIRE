@@ -1,5 +1,0 @@
-production:
-  requires:
-    - tilt
-    - facets
-

@@ -1,21 +1,19 @@
-module Till
+module Sourcery
 
-  # = Tilling Context
   #
   class Context
 
-    require 'till/metadata'
+    require 'sourcery/metadata'
 
+    #
     attr :metadata
 
     #
-
     def initialize(dir=nil)
       @metadata = Metadata.new(dir)
     end
 
     #
-
     def method_missing(s)
       @metadata.send(s)
     end
@@ -26,7 +24,6 @@ module Till
     end
 
     #
-
     def to_h
       @metadata.to_h
     end
