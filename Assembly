@@ -19,22 +19,12 @@ email:
     - ruby-talk@ruby-lang.org
     - rubyworks-mailinglist@googlegroups.com
 
-qed:
-  files: spec/
+#qed:
+#  files: spec/
 
-qedoc:
-  files: spec/
-  output:
-    - QED.rdoc
-    - web/demos.html
-
-# OMG! Look at this old thing!
-#rubyforge:
-#  service : Rubyforge
-#  unixname: <= suite %>
-#  groupid : ~
-#  package : <= name %>
-#  sitemap:
-#    doc/rdoc: <= name %>
-#  active  : false
+#qedoc:
+#  files: spec/
+#  output:
+#    - QED.rdoc
+#    - web/demos.html
 
