@@ -2,6 +2,7 @@ module Sourcery
 
   require 'sourcery/context'
   require 'fileutils'
+  require 'erb'
 
   # Spell Caster renders `src/` files to `lib/`.
   #
@@ -77,6 +78,8 @@ module Sourcery
 
     #
     def call
+      ensure_target_directory
+
       copy_map = {}
 
       files.each do |file|
@@ -97,8 +100,8 @@ module Sourcery
       if File.file?(output) && skip?
         print_line('SKIP', output)
       else
-        template = ERB.new(File.read(file)
-        result   = template.result(constext.binding)
+        template = ERB.new(File.read(file))
+        result   = template.result(context.__binding__)
         if stdout
           puts result
         else
@@ -155,23 +158,26 @@ module Sourcery
     # Save file and make it read-only.
     def save_file(file, text)
       #File.open(file, 'w'){ |f| << text }
+      mode = nil
       if File.exist?(file)
         mode = File.stat(file).mode
-        #File.chmod(mode | 0000220, file)
-        File.open(file, 'w'){ |f| f << result }
-        #File.chmod(mode, file)
-        File.chmod(mode | 0000220, file)
-      else
-        File.open(file, 'w'){ |f| f << result }
-        File.chmod(0440, file)
+        File.chmod(mode | 0000200, file)  # make writeable
       end
+      File.open(file, 'w'){ |f| f << text }
+      mode = mode || File.stat(file).mode
+      #File.chmod(mode | 0000222, file)   # FIXME Make file read-only
     end
 
     #
     def ask(prompt=nil)
       $stdout << "#{prompt}"
       $stdout.flush
-     $stdin.gets.chomp!
+      $stdin.gets.chomp!
+    end
+
+    #
+    def ensure_target_directory
+      FileUtils.mkdir(target) unless File.directory?(target)
     end
 
   end

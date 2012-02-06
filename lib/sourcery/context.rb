@@ -34,6 +34,11 @@ module Sourcery
     #  erb.result(binding)
     #end
 
+    # Get a clean binding.
+    def __binding__
+      binding
+    end
+
   end
 
 end

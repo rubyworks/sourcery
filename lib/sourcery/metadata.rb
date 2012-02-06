@@ -60,7 +60,8 @@ module Sourcery
     # Load metadata from meta_dir.
 
     def load_metadata_from_directory
-      Dir[File.join(meta_dir, '*')].each do |f|
+      entries = Dir.glob(File.join(meta_dir, '*'))
+      entries.each do |f|
         val = File.read(f).strip
         val = YAML.load(val) if val =~ /\A---/
         @cache[File.basename(f)] = val
@@ -69,7 +70,7 @@ module Sourcery
 
     # Load metadata from metadata directory.
 
-    def load_metadata_from_directory
+    def load_metadata_from_dotruby
       file = Dir[File.join(root, '.ruby')].first
       if file
         @cache.update(YAML.load_file(file))
@@ -93,7 +94,7 @@ module Sourcery
 
     # Root directory is indicated by the presence of a +src/+ directory.
 
-    ROOT_INDICATORS = ['src/']
+    ROOT_INDICATORS = ['.ruby,var/,meta/,.meta/,.git,.hg,_darcs']
 
     # Locate the project's root directory. This is determined
     # by ascending up the directory tree from the current position
