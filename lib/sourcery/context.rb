@@ -1,9 +1,9 @@
 module Sourcery
 
+  require 'sourcery/metadata'
+
   #
   class Context
-
-    require 'sourcery/metadata'
 
     #
     attr :metadata

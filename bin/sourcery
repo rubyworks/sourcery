@@ -1,2 +1,4 @@
 #!/usr/bin/env ruby
-require 'till/cli'
+require 'sourcery'
+Sourcery.cli(*ARGV)
+

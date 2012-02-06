@@ -1,33 +1,22 @@
 # Sourcery
 
-[Website](http://rubyworks.github.com/sourcery) /
-[API](http://rubydoc.info/gems/sourcery) /
-[Source](http://github.com/proutils/sourcery) /
-[Forum](http://googlegroups.com/group/rubyworks-mailinglist)
+[Home](http://rubyworks.github.com/sourcery) /
+[Learn](http://rubydoc.info/gems/sourcery) /
+[Browse](http://github.com/proutils/sourcery) /
+[Discuss](http://googlegroups.com/group/rubyworks-mailinglist)
 
 
 ## DESCRIPTION
 
-Sourcery is a simple project-oriented eRuby-based template system
-using POM metadata.
-
-
-## FEATURES
-
-* Easy to use.
-* Used eRuby. Easy.
-* Uses POM metadata. Easy.
-* Templates go where the file goes. Easy.
-* Did I mention it was easy?
+Sourcery gives you the power to code Ruby at a higher plane of
+reality, thanks to the magic of dotRuby and eRuby.
 
 
 ## INSTRUCTION
 
-Create an template file, such as README.sourcery.
-
 In your Ruby project add a `src/`  directory, or if you have
-a prexisting `lib` directory copy it to `src/` instead. From
-now on only edit the files in `src/`, NEVER edit the `lib` files.
+a prexisting `lib` directory copy it to `src/` instead (`cp -r lib src`).
+From now on only edit the files in `src/`, NEVER edit `lib` files.
 
 After editing `src/` files run:
 
