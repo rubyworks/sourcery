@@ -1,25 +1,27 @@
 /* GENERAL */
 
-a { color: #0C0; }
-h1 { font-size: 64px; margin: 20px 0; color: #0C0; }
-h2 { margin-top: 30px; color: #0C0; }
-h3 { color: #0C0; font-weight: bold; }
+body{ background: url(../images/starfield.jpg) center -275px; }
 
-pre { background: white; -moz-border-radius: 10px; color: #FF5599; font-weight: bold; padding: 20px 10px 20px 10px; }
+a { color: #C2C; }
+h1 { color: #EEF; text-shadow: 5px 5px 10px #99F; margin: 20px 0; font-size: 64px; }
+h2 { color: #EEF; text-shadow: 5px 5px 10px #99F; margin-top: 30px; padding-top: 10px; }
+h3 { color: #EEF; text-shadow: 5px 5px 10px #99F; font-weight: bold; }
+
+pre { background: white; border-radius: 10px; color: #FF5599; font-weight: bold; padding: 20px 10px 20px 10px;
+  margin-bottom: 2em;
+}
 
 
 /* SCHEMES */
 
-.page { width: 760px; margin: 0 auto; }
+.page { width: 750px; margin: 0 auto; }
 
 .hued {
-  background: #ccFFcc;
-  color: #353;
+  background: #000022;
+  color: #EFE;
 }
 .heud a    { color: #55FF99; }
 .heud code { color: #555; }
-.hued h1 { color: #0C0; }
-.hued h2 { color: #0C0; }
 
 .expressive {
   color: white;
@@ -29,20 +31,26 @@ pre { background: white; -moz-border-radius: 10px; color: #FF5599; font-weight: 
 /* SPECIAL */
 
 #nav { padding: 20px 60px 20px 0; text-align: center; color: pink; }
-#nav a { font-size: 100%; font-variant: small-caps; }
+#nav a { font-size: 100%; font-variant: small-caps; color: #EEF; font-weight: bold; }
+#nav a:hover { text-shadow: 5px 5px 10px #99F; text-decoration: none; }
 
-#header { height: 240px; padding: 5px 0; border-top: 2px solid lightgreen; border-bottom: 2px solid lightgreen; text-align: left; }
-#header h1 { font-size: 140px; font-weight: bold; color: #0C0; font-family: courier, monospace; padding-top: 35px; margin: 0; }
+#header { height: 240px; padding: 5px 0; border-top: 1px solid #000; border-bottom: 1px solid #000; text-align: left; }
+#header h1 { font-size: 140px; font-weight: bold; color: #000; font-family: courier, monospace; padding-top: 35px; margin: 0;
+  text-shadow: 5px 0px 5px #EEF;
+}
 
-#main { border-bottom: 2px solid pink; padding: 10px 0 30px 0; }
+#main { border-bottom: 1px solid #000; padding: 10px 0 30px 0; }
 #main p { font-family: "Lucida Console"; }
 #main li { }
 
-#footer { padding: 20px; text-align: center; margin: 0 auto; width: 800px; }
-#footer .copyright { color: #0C0; padding-top: 40px; font-family: monospace; font-weight: bold; font-size: 90%; line-height: 150%; }
-
-#aside { position: fixed; padding: 20px; left: 0; top: 70px; width: 200px;
-  border-left: 0px solid; border-bottom: 0px solid;
-  border-color: #0C0; background: url(../images/fade.png) transparent;
+#footer { padding: 30px; text-align: center; margin: 0 auto; width: 800px; }
+#footer .copyright { color: #500; padding-top: 40px; font-family: monospace; font-weight: bold; font-size: 90%; line-height: 150%; 
+ color: #FFF;
 }
 
+#aside { position: fixed; padding: 20px; left: 0; top: 60px; width: 200px; height: 210px; margin: 0;
+  border-left: 0px solid; border-bottom: 0px solid;
+  border-color: #500; background: url(../images/fade.png) transparent;
+}
+#aside li { padding: 4px 0; }
+#aside a { color: #F44; }
