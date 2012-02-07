@@ -3,35 +3,36 @@
 name    "sourcery"
 version "0.1.0"
 title   "Sourcery"
-summary "Write Ruby code in the astrological plane."
+summary "New Age Ruby, Coding in the Astrological Plain."
+created "2009-07-15"
 
 description "Sourcery puts a spell-casting layer between
-the code you write and the code that ships. Using ERB
-templating in this layer lets you wirte highly dynamic
-meta-code."
+the code you write and the code you ship. Using ERB templating
+in this layer lets you write highly meta-magical code."
 
 authors [
   'Trans <transfire@gmail.com>',
 ]
 
 requirements [
-  'malt',
-  'facets',
   'detroit (build)'
 ]
 
 resources(
-  'home' => 'https://github.com/rubyworks/sourcery',
-  'code' => 'https://github.com/rubyworks/sourcery'
+  'home' => 'https://rubyworks.github.com/sourcery',
+  'code' => 'https://github.com/rubyworks/sourcery',
+  'bugs' => 'https://github.com/rubyworks/sourcery/issues',
+  'mail' => 'https://groups.google.com/groups/rubyworks-mailinglist'
 )
 
 repositories(
   'upstream' => 'git://github.com/rubyworks/sourcery.git'
 )
 
-created '2009-07-15'
+organization 'rubyworks'
 
 copyrights [
   '2009 Rubyworks (BSD-2-Clause)'
 ]
+
 
